@@ -21,3 +21,11 @@ Column E (__Greeks__): Greeks to perform sensitivity analysis on at a trade and 
 Column F (number_format): Excel number formatting for each greek respectively
 
 Column G (__Index__): Credit indices
+
+Column H (up_bump): Size of bumps in the positive direction
+
+Column I (down_bump): Size of bumps in the negative direction
+
+Column J (num_up): Number of bumps in the positive direction
+
+Column K (num_down): Number of bumps in the negative direction
