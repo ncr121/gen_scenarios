@@ -11,8 +11,13 @@ Originally called Bloomberg CDSO pricer directly via Python API but given latenc
 Created delta and gamma plots as well as the payoff diagrams at maturity against index level, all in Excel to allow interactive use for trading desk. Formatting for plots is done in _"xlwings_functions.py"_ using VBA syntax.
 ## Getting Started
 Go to _CDSO_deal_list.xlsx_ where all input parameters can be set in the config sheet titled _Deal_List_. Below are the descriptions for each type of input:
+
 Column A (__Deal IDs__): Bloomberg deal IDs from CDSO screen for valid trades
+
 Column C (__Static Fields__): Static fields to be read in from Bloomberg to for each trade
+
 Column E (__Greeks__): Greeks to perform sensitivity analysis on at a trade and portfolio level
+
 Column F (number_format): Excel number formatting for each greek respectively
+
 Column G (__Index__): Credit indices
