@@ -1,12 +1,13 @@
 # Credit Scenario Engine
 This project is a designed for helping traders to manage credit index options portfolio in multi-strategy hedge funds. The scenario engine runs sensitivity analysis by calculating delta and gamma for individual trades and the overall portfolio for small and extreme shifts in spreads.
 ## Description
-Modular code that can easily be extended to run scenarios on other greeks like theta and vega.
-Code reads in config file (_"CDSO_deal_list.xlsx"_)- an Excel file that contains all input parameters for trades (Bloomberg deal IDs from CDSO screen), type of greeks and size/# of bumps  All scenarios and plots are generated based on this config file.
+For each trade, the bumped index levels are computed based on the input parameters provided for the trade's credit index. The scenario engine calls the Bloomberg CDSO pricer to compute a table where the rows are the greeks and the columns are the bumped index levels. This table shows how the greeks will change based on different scenarios (bumps).
 
-Originally called Bloomberg CDSO pricer directly via Python API but given latency issues due to the large # of trades and scenarios needed, improved efficiency by using Python to paste the BDP function call into Excel and then simultaneously reprice all scenarios in Excel using a simple refresh calc. 
+Originally, this was done by calling the Bloomber-Python API directly, but due to latency issues based on the large number of trades and scenarios a more efficien method was used. This is by using the _xlwings_ package to write the formulas to Excel using Python then allow Excel to calculate automatically and reading the data back to Python.
 
-Created delta and gamma plots as well as the payoff diagrams at maturity against index level, all in Excel to allow interactive use for trading desk. Formatting for plots is done in _"xlwings_functions.py"_ using VBA syntax.
+Based on this data, delta and gamma plots are created as well as payoff diagrams at maturity against index level. For each trade, a new sheet is created containing the greek table and graphs.
+
+Finally, for each credit index, the greeks and payoffs are aggregated and all tables and graphs are displayed in the _Summary_ sheet.
 ## Getting Started
 ### Configuration
 Go to _CDSO_deal_list.xlsx_ where all input parameters can be set in the config sheet titled _Deal_List_. Below are the descriptions for each type of input:
