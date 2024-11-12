@@ -1,8 +1,6 @@
 # Credit Scenario Engine
-This project is a scenario engine for helping traders to manage credit index options portfolio in multi-strategy hedge funds.
+This project is a designed for helping traders to manage credit index options portfolio in multi-strategy hedge funds. The scenario engine runs sensitivity analysis by calculating delta and gamma for individual trades and the overall portfolio for small and extreme shifts in spreads.
 ## Description
-The scenario engine runs sensitivity analysis by calculating delta and gamma for individual trades and the overall portfolio.  for small and extreme shifts in spreads
-
 Modular code that can easily be extended to run scenarios on other greeks like theta and vega.
 Code reads in config file (_"CDSO_deal_list.xlsx"_)- an Excel file that contains all input parameters for trades (Bloomberg deal IDs from CDSO screen), type of greeks and size/# of bumps  All scenarios and plots are generated based on this config file.
 
