@@ -3,7 +3,7 @@ This project is a designed for helping traders to manage credit index options po
 ## Description
 For each trade, the bumped index levels are computed based on the input parameters provided for the trade's credit index. The scenario engine calls the Bloomberg CDSO pricer to compute a table where the rows are the greeks and the columns are the bumped index levels. This table shows how the greeks will change based on different scenarios (bumps).
 
-Originally, this was done by calling the Bloomber-Python API directly, but due to latency issues based on the large number of trades and scenarios a more efficien method was used. This is by using the _xlwings_ package to write the formulas to Excel using Python then allow Excel to calculate automatically and reading the data back to Python.
+Originally, this was done by calling the Bloomber-Python API directly, but due to latency issues based on the large number of trades and scenarios a more efficient method was used. This is by using the _xlwings_ package to write the formulas to Excel using Python then allow Excel to calculate automatically and reading the data back to Python.
 
 Based on this data, delta and gamma plots are created as well as payoff diagrams at maturity against index level. For each trade, a new sheet is created containing the greek table and graphs.
 
